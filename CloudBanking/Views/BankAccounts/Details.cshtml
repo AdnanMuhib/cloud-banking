@@ -1,4 +1,4 @@
-﻿@model CloudBanking.Models.Account
+﻿@model CloudBanking.Models.BankAccount
 
 @{
     ViewBag.Title = "Details";
@@ -8,7 +8,7 @@
 <h2>Details</h2>
 
 <div>
-    <h4>Account</h4>
+    <h4>BankAccount</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -52,19 +52,19 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Account1.AccountCurrency)
+            @Html.DisplayNameFor(model => model.BankAccount1.AccountCurrency)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Account1.AccountCurrency)
+            @Html.DisplayFor(model => model.BankAccount1.AccountCurrency)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Account2.AccountCurrency)
+            @Html.DisplayNameFor(model => model.BankAccount2.AccountCurrency)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Account2.AccountCurrency)
+            @Html.DisplayFor(model => model.BankAccount2.AccountCurrency)
         </dd>
 
         <dt>

@@ -24,7 +24,7 @@ namespace CloudBanking.Models
         public System.DateTime ExpiryDate { get; set; }
         public int SenderBranchID { get; set; }
     
-        public virtual Account Account { get; set; }
+        public virtual BankAccount BankAccount { get; set; }
         public virtual Branch Branch { get; set; }
         public virtual Customer Customer { get; set; }
     }

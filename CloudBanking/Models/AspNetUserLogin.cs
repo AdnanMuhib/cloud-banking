@@ -12,15 +12,12 @@ namespace CloudBanking.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class BranchEmployee
+    public partial class AspNetUserLogin
     {
-        public int EmployeeID { get; set; }
-        public int BranchID { get; set; }
-        public System.DateTime StartDate { get; set; }
-        public Nullable<System.DateTime> EndDate { get; set; }
-        public int ID { get; set; }
+        public string LoginProvider { get; set; }
+        public string ProviderKey { get; set; }
+        public string UserId { get; set; }
     
-        public virtual Branch Branch { get; set; }
-        public virtual Employee Employee { get; set; }
+        public virtual AspNetUser AspNetUser { get; set; }
     }
 }

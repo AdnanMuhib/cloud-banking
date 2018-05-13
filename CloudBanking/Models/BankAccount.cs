@@ -12,12 +12,12 @@ namespace CloudBanking.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Account
+    public partial class BankAccount
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Account()
+        public BankAccount()
         {
-            this.Customers = new HashSet<Customer>();
+            this.AccountCustomers = new HashSet<AccountCustomer>();
             this.Drafts = new HashSet<Draft>();
         }
     
@@ -30,9 +30,9 @@ namespace CloudBanking.Models
         public System.DateTime OpenDate { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Customer> Customers { get; set; }
-        public virtual Account Account1 { get; set; }
-        public virtual Account Account2 { get; set; }
+        public virtual ICollection<AccountCustomer> AccountCustomers { get; set; }
+        public virtual BankAccount BankAccount1 { get; set; }
+        public virtual BankAccount BankAccount2 { get; set; }
         public virtual Branch Branch { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Draft> Drafts { get; set; }

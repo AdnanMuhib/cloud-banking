@@ -133,6 +133,5 @@ C:\Users\Antivirus\Documents\Visual Studio 2015\Projects\CloudBanking\CloudBanki
 C:\Users\Antivirus\Documents\Visual Studio 2015\Projects\CloudBanking\CloudBanking\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\Antivirus\Documents\Visual Studio 2015\Projects\CloudBanking\CloudBanking\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\Antivirus\Documents\Visual Studio 2015\Projects\CloudBanking\CloudBanking\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\Antivirus\Documents\Visual Studio 2015\Projects\CloudBanking\CloudBanking\obj\Debug\CloudBanking.csprojResolveAssemblyReference.cache
 C:\Users\Antivirus\Documents\Visual Studio 2015\Projects\CloudBanking\CloudBanking\obj\Debug\CloudBanking.dll
 C:\Users\Antivirus\Documents\Visual Studio 2015\Projects\CloudBanking\CloudBanking\obj\Debug\CloudBanking.pdb

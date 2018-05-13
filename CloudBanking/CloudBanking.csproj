@@ -170,14 +170,14 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AccountsController.cs" />
+    <Compile Include="Controllers\AccountCustomersController.cs" />
+    <Compile Include="Controllers\BankAccountsController.cs" />
     <Compile Include="Controllers\BankTransactionsController.cs" />
     <Compile Include="Controllers\BranchEmployeesController.cs" />
     <Compile Include="Controllers\BranchesController.cs" />
     <Compile Include="Controllers\ChequesController.cs" />
     <Compile Include="Controllers\CurrencyRatesController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
-    <Compile Include="Controllers\DraftsController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\FingerPrintsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -186,10 +186,25 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Account.cs">
+    <Compile Include="Models\AccountCustomer.cs">
       <DependentUpon>CloudBank.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AspNetRole.cs">
+      <DependentUpon>CloudBank.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUser.cs">
+      <DependentUpon>CloudBank.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUserClaim.cs">
+      <DependentUpon>CloudBank.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUserLogin.cs">
+      <DependentUpon>CloudBank.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BankAccount.cs">
+      <DependentUpon>CloudBank.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\BankTransaction.cs">
       <DependentUpon>CloudBank.tt</DependentUpon>
     </Compile>
@@ -234,9 +249,6 @@
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>CloudBank.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Wallet.cs">
       <DependentUpon>CloudBank.tt</DependentUpon>
     </Compile>
@@ -290,6 +302,11 @@
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\dashboard\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\dashboard\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\dashboard\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\dashboard\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\dashboard\fonts\FontAwesome.otf" />
     <EntityDeploy Include="Models\CloudBank.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>CloudBank.Designer.cs</LastGenOutput>
@@ -297,11 +314,6 @@
     <Content Include="Models\CloudBank.edmx.diagram">
       <DependentUpon>CloudBank.edmx</DependentUpon>
     </Content>
-    <Content Include="Content\dashboard\fonts\fontawesome-webfont.eot" />
-    <Content Include="Content\dashboard\fonts\fontawesome-webfont.ttf" />
-    <Content Include="Content\dashboard\fonts\fontawesome-webfont.woff" />
-    <Content Include="Content\dashboard\fonts\fontawesome-webfont.woff2" />
-    <Content Include="Content\dashboard\fonts\FontAwesome.otf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -368,11 +380,6 @@
     <Content Include="Views\Customers\Details.cshtml" />
     <Content Include="Views\Customers\Edit.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
-    <Content Include="Views\Accounts\Create.cshtml" />
-    <Content Include="Views\Accounts\Delete.cshtml" />
-    <Content Include="Views\Accounts\Details.cshtml" />
-    <Content Include="Views\Accounts\Edit.cshtml" />
-    <Content Include="Views\Accounts\Index.cshtml" />
     <Content Include="Views\BankTransactions\Create.cshtml" />
     <Content Include="Views\BankTransactions\Delete.cshtml" />
     <Content Include="Views\BankTransactions\Details.cshtml" />
@@ -388,11 +395,6 @@
     <Content Include="Views\Cheques\Details.cshtml" />
     <Content Include="Views\Cheques\Edit.cshtml" />
     <Content Include="Views\Cheques\Index.cshtml" />
-    <Content Include="Views\Drafts\Create.cshtml" />
-    <Content Include="Views\Drafts\Delete.cshtml" />
-    <Content Include="Views\Drafts\Details.cshtml" />
-    <Content Include="Views\Drafts\Edit.cshtml" />
-    <Content Include="Views\Drafts\Index.cshtml" />
     <Content Include="Views\FingerPrints\Create.cshtml" />
     <Content Include="Views\FingerPrints\Delete.cshtml" />
     <Content Include="Views\FingerPrints\Details.cshtml" />
@@ -406,6 +408,16 @@
     <Content Include="Views\Home\Dashboard.cshtml" />
     <Content Include="Views\Shared\_dashboard.cshtml" />
     <Content Include="Views\Home\test.cshtml" />
+    <Content Include="Views\BankAccounts\Create.cshtml" />
+    <Content Include="Views\BankAccounts\Delete.cshtml" />
+    <Content Include="Views\BankAccounts\Details.cshtml" />
+    <Content Include="Views\BankAccounts\Edit.cshtml" />
+    <Content Include="Views\BankAccounts\Index.cshtml" />
+    <Content Include="Views\AccountCustomers\Create.cshtml" />
+    <Content Include="Views\AccountCustomers\Delete.cshtml" />
+    <Content Include="Views\AccountCustomers\Details.cshtml" />
+    <Content Include="Views\AccountCustomers\Edit.cshtml" />
+    <Content Include="Views\AccountCustomers\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

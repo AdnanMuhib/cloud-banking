@@ -17,7 +17,7 @@ namespace CloudBanking.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Customer()
         {
-            this.Accounts = new HashSet<Account>();
+            this.AccountCustomers = new HashSet<AccountCustomer>();
             this.BankTransactions = new HashSet<BankTransaction>();
             this.Cheques = new HashSet<Cheque>();
             this.Drafts = new HashSet<Draft>();
@@ -34,7 +34,7 @@ namespace CloudBanking.Models
         public string Gender { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Account> Accounts { get; set; }
+        public virtual ICollection<AccountCustomer> AccountCustomers { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BankTransaction> BankTransactions { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

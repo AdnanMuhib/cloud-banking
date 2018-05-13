@@ -17,8 +17,8 @@ namespace CloudBanking.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Branch()
         {
+            this.BankAccounts = new HashSet<BankAccount>();
             this.BranchEmployees = new HashSet<BranchEmployee>();
-            this.Accounts = new HashSet<Account>();
             this.Drafts = new HashSet<Draft>();
         }
     
@@ -27,9 +27,9 @@ namespace CloudBanking.Models
         public string BranchAddress { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<BranchEmployee> BranchEmployees { get; set; }
+        public virtual ICollection<BankAccount> BankAccounts { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Account> Accounts { get; set; }
+        public virtual ICollection<BranchEmployee> BranchEmployees { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Draft> Drafts { get; set; }
     }

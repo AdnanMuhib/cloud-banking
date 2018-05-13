@@ -1,4 +1,4 @@
-﻿@model IEnumerable<CloudBanking.Models.Account>
+﻿@model IEnumerable<CloudBanking.Models.BankAccount>
 
 @{
     ViewBag.Title = "Index";
@@ -8,7 +8,7 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create", new { }, new { @class = "btn btn-success btn-cons" })
+    @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
@@ -28,10 +28,10 @@
             @Html.DisplayNameFor(model => model.OpenDate)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Account1.AccountCurrency)
+            @Html.DisplayNameFor(model => model.BankAccount1.AccountCurrency)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Account2.AccountCurrency)
+            @Html.DisplayNameFor(model => model.BankAccount2.AccountCurrency)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Branch.BranchName)
@@ -57,10 +57,10 @@
             @Html.DisplayFor(modelItem => item.OpenDate)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Account1.AccountCurrency)
+            @Html.DisplayFor(modelItem => item.BankAccount1.AccountCurrency)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Account2.AccountCurrency)
+            @Html.DisplayFor(modelItem => item.BankAccount2.AccountCurrency)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Branch.BranchName)

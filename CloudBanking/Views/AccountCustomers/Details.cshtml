@@ -1,0 +1,35 @@
+﻿@model CloudBanking.Models.AccountCustomer
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_dashboard.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AccountCustomer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BankAccount.AccountCurrency)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BankAccount.AccountCurrency)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.CustomerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.CustomerName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
