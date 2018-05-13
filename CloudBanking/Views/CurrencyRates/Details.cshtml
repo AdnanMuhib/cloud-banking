@@ -1,0 +1,74 @@
+﻿@model CloudBanking.Models.CurrencyRate
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CurrencyRate</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.USD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.YEN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YEN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.INR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.POUND)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.POUND)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EURO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EURO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RIAL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RIAL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DIRHAM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DIRHAM)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CurrencyDate }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

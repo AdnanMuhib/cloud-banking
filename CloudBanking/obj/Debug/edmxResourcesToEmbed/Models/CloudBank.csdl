@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CloudBankingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="AccountID" />
+    </Key>
+    <Property Name="AccountID" Type="Int32" Nullable="false" />
+    <Property Name="AccountCurrency" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AccountType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MinimumBalance" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AccounBalance" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BranchID" Type="Int32" Nullable="false" />
+    <Property Name="OpenDate" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Customers" Relationship="Self.AccountCustomer" FromRole="Account" ToRole="Customer" />
+    <NavigationProperty Name="Account1" Relationship="CloudBankingModel.FK_Account_Account" FromRole="Account" ToRole="Account1" />
+    <NavigationProperty Name="Account2" Relationship="CloudBankingModel.FK_Account_Account" FromRole="Account1" ToRole="Account" />
+    <NavigationProperty Name="Branch" Relationship="CloudBankingModel.FK_Account_Branch" FromRole="Account" ToRole="Branch" />
+    <NavigationProperty Name="Drafts" Relationship="CloudBankingModel.FK_Draft_Account" FromRole="Account" ToRole="Draft" />
+  </EntityType>
+  <EntityType Name="BankTransaction">
+    <Key>
+      <PropertyRef Name="TransactionID" />
+    </Key>
+    <Property Name="TransactionID" Type="Int32" Nullable="false" />
+    <Property Name="CustomerID" Type="Int32" Nullable="false" />
+    <Property Name="TransactionType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Amount" Type="Int32" Nullable="false" />
+    <Property Name="TransactionDate" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Customer" Relationship="CloudBankingModel.FK_BankTransaction_Customer" FromRole="BankTransaction" ToRole="Customer" />
+    <NavigationProperty Name="Wallets" Relationship="CloudBankingModel.FK_Wallet_BankTransaction" FromRole="BankTransaction" ToRole="Wallet" />
+  </EntityType>
+  <EntityType Name="Branch">
+    <Key>
+      <PropertyRef Name="BranchID" />
+    </Key>
+    <Property Name="BranchID" Type="Int32" Nullable="false" />
+    <Property Name="BranchName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BranchAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="BranchEmployees" Relationship="Self.FK_BranchEmployee_Branch" FromRole="Branch" ToRole="BranchEmployee" />
+    <NavigationProperty Name="Accounts" Relationship="CloudBankingModel.FK_Account_Branch" FromRole="Branch" ToRole="Account" />
+    <NavigationProperty Name="Drafts" Relationship="CloudBankingModel.FK_Draft_Branch" FromRole="Branch" ToRole="Draft" />
+  </EntityType>
+  <EntityType Name="Cheque">
+    <Key>
+      <PropertyRef Name="ChequeID" />
+    </Key>
+    <Property Name="ChequeID" Type="Int32" Nullable="false" />
+    <Property Name="CustomerID" Type="Int32" Nullable="false" />
+    <Property Name="Amount" Type="Int32" Nullable="false" />
+    <Property Name="AmountInWords" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PayeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ChequeDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="MACAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IPAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Customer" Relationship="CloudBankingModel.FK_Cheque_Customer" FromRole="Cheque" ToRole="Customer" />
+  </EntityType>
+  <EntityType Name="CurrencyRate">
+    <Key>
+      <PropertyRef Name="CurrencyDate" />
+    </Key>
+    <Property Name="CurrencyDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="USD" Type="Double" Nullable="false" />
+    <Property Name="YEN" Type="Double" Nullable="false" />
+    <Property Name="INR" Type="Double" Nullable="false" />
+    <Property Name="POUND" Type="Double" Nullable="false" />
+    <Property Name="EURO" Type="Double" Nullable="false" />
+    <Property Name="RIAL" Type="Double" Nullable="false" />
+    <Property Name="DIRHAM" Type="Double" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="Int32" Nullable="false" />
+    <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DOB" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CustomerAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CustomerEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CustomerPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CNIC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Accounts" Relationship="Self.AccountCustomer" FromRole="Customer" ToRole="Account" />
+    <NavigationProperty Name="BankTransactions" Relationship="CloudBankingModel.FK_BankTransaction_Customer" FromRole="Customer" ToRole="BankTransaction" />
+    <NavigationProperty Name="Cheques" Relationship="CloudBankingModel.FK_Cheque_Customer" FromRole="Customer" ToRole="Cheque" />
+    <NavigationProperty Name="Drafts" Relationship="CloudBankingModel.FK_Draft_Customer" FromRole="Customer" ToRole="Draft" />
+    <NavigationProperty Name="FingerPrints" Relationship="CloudBankingModel.FK_FingerPrint_Customer" FromRole="Customer" ToRole="FingerPrint" />
+  </EntityType>
+  <EntityType Name="Draft">
+    <Key>
+      <PropertyRef Name="DraftID" />
+    </Key>
+    <Property Name="DraftID" Type="Int32" Nullable="false" />
+    <Property Name="CustomerID" Type="Int32" />
+    <Property Name="SenderName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SenderCNIC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ReceiverAccountID" Type="Int32" Nullable="false" />
+    <Property Name="DraftAmount" Type="Int32" Nullable="false" />
+    <Property Name="DraftDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ExpiryDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="SenderBranchID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Account" Relationship="CloudBankingModel.FK_Draft_Account" FromRole="Draft" ToRole="Account" />
+    <NavigationProperty Name="Branch" Relationship="CloudBankingModel.FK_Draft_Branch" FromRole="Draft" ToRole="Branch" />
+    <NavigationProperty Name="Customer" Relationship="CloudBankingModel.FK_Draft_Customer" FromRole="Draft" ToRole="Customer" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+    <Property Name="EmpName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EmpRole" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EmpAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ContactNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CNIC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="BranchEmployees" Relationship="Self.FK_BranchEmployee_Employee" FromRole="Employee" ToRole="BranchEmployee" />
+  </EntityType>
+  <EntityType Name="FingerPrint">
+    <Key>
+      <PropertyRef Name="FingerPrintID" />
+    </Key>
+    <Property Name="FingerPrintID" Type="Int32" Nullable="false" />
+    <Property Name="CustomerID" Type="Int32" Nullable="false" />
+    <Property Name="Arcs" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Whorls" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Loops" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Customer" Relationship="CloudBankingModel.FK_FingerPrint_Customer" FromRole="FingerPrint" ToRole="Customer" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Wallet">
+    <Key>
+      <PropertyRef Name="WalletID" />
+    </Key>
+    <Property Name="WalletID" Type="Int32" Nullable="false" />
+    <Property Name="AuthKey" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="WalletType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TransactionID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="BankTransaction" Relationship="CloudBankingModel.FK_Wallet_BankTransaction" FromRole="Wallet" ToRole="BankTransaction" />
+  </EntityType>
+  <EntityType Name="BranchEmployee">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+      <PropertyRef Name="BranchID" />
+      <PropertyRef Name="StartDate" />
+    </Key>
+    <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+    <Property Name="BranchID" Type="Int32" Nullable="false" />
+    <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="EndDate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Branch" Relationship="Self.FK_BranchEmployee_Branch" FromRole="BranchEmployee" ToRole="Branch" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK_BranchEmployee_Employee" FromRole="BranchEmployee" ToRole="Employee" />
+  </EntityType>
+  <Association Name="FK_BranchEmployee_Branch">
+    <End Role="Branch" Type="Self.Branch" Multiplicity="1" />
+    <End Role="BranchEmployee" Type="Self.BranchEmployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Branch">
+        <PropertyRef Name="BranchID" />
+      </Principal>
+      <Dependent Role="BranchEmployee">
+        <PropertyRef Name="BranchID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BranchEmployee_Employee">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+    <End Role="BranchEmployee" Type="Self.BranchEmployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="BranchEmployee">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AccountCustomer">
+    <End Role="Account" Type="Self.Account" Multiplicity="*" />
+    <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="CloudBankingEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Accounts" EntityType="Self.Account" />
+    <EntitySet Name="BankTransactions" EntityType="Self.BankTransaction" />
+    <EntitySet Name="Branches" EntityType="Self.Branch" />
+    <EntitySet Name="Cheques" EntityType="Self.Cheque" />
+    <EntitySet Name="CurrencyRates" EntityType="Self.CurrencyRate" />
+    <EntitySet Name="Customers" EntityType="Self.Customer" />
+    <EntitySet Name="Drafts" EntityType="Self.Draft" />
+    <EntitySet Name="Employees" EntityType="Self.Employee" />
+    <EntitySet Name="FingerPrints" EntityType="Self.FingerPrint" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Wallets" EntityType="Self.Wallet" />
+    <EntitySet Name="BranchEmployees" EntityType="Self.BranchEmployee" />
+    <AssociationSet Name="FK_BranchEmployee_Branch" Association="Self.FK_BranchEmployee_Branch">
+      <End Role="Branch" EntitySet="Branches" />
+      <End Role="BranchEmployee" EntitySet="BranchEmployees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BranchEmployee_Employee" Association="Self.FK_BranchEmployee_Employee">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="BranchEmployee" EntitySet="BranchEmployees" />
+    </AssociationSet>
+    <AssociationSet Name="AccountCustomer" Association="Self.AccountCustomer">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="Customer" EntitySet="Customers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Account_Account" Association="CloudBankingModel.FK_Account_Account">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="Account1" EntitySet="Accounts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Account_Branch" Association="CloudBankingModel.FK_Account_Branch">
+      <End Role="Branch" EntitySet="Branches" />
+      <End Role="Account" EntitySet="Accounts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Draft_Account" Association="CloudBankingModel.FK_Draft_Account">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="Draft" EntitySet="Drafts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BankTransaction_Customer" Association="CloudBankingModel.FK_BankTransaction_Customer">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="BankTransaction" EntitySet="BankTransactions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Wallet_BankTransaction" Association="CloudBankingModel.FK_Wallet_BankTransaction">
+      <End Role="BankTransaction" EntitySet="BankTransactions" />
+      <End Role="Wallet" EntitySet="Wallets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Draft_Branch" Association="CloudBankingModel.FK_Draft_Branch">
+      <End Role="Branch" EntitySet="Branches" />
+      <End Role="Draft" EntitySet="Drafts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cheque_Customer" Association="CloudBankingModel.FK_Cheque_Customer">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Cheque" EntitySet="Cheques" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Draft_Customer" Association="CloudBankingModel.FK_Draft_Customer">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Draft" EntitySet="Drafts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FingerPrint_Customer" Association="CloudBankingModel.FK_FingerPrint_Customer">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="FingerPrint" EntitySet="FingerPrints" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association Name="FK_Account_Account">
+    <End Type="CloudBankingModel.Account" Role="Account" Multiplicity="1" />
+    <End Type="CloudBankingModel.Account" Role="Account1" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="AccountID" />
+      </Principal>
+      <Dependent Role="Account1">
+        <PropertyRef Name="AccountID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Account_Branch">
+    <End Type="CloudBankingModel.Branch" Role="Branch" Multiplicity="1" />
+    <End Type="CloudBankingModel.Account" Role="Account" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Branch">
+        <PropertyRef Name="BranchID" />
+      </Principal>
+      <Dependent Role="Account">
+        <PropertyRef Name="BranchID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Draft_Account">
+    <End Type="CloudBankingModel.Account" Role="Account" Multiplicity="1" />
+    <End Type="CloudBankingModel.Draft" Role="Draft" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="AccountID" />
+      </Principal>
+      <Dependent Role="Draft">
+        <PropertyRef Name="ReceiverAccountID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BankTransaction_Customer">
+    <End Type="CloudBankingModel.Customer" Role="Customer" Multiplicity="1" />
+    <End Type="CloudBankingModel.BankTransaction" Role="BankTransaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="BankTransaction">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Wallet_BankTransaction">
+    <End Type="CloudBankingModel.BankTransaction" Role="BankTransaction" Multiplicity="1" />
+    <End Type="CloudBankingModel.Wallet" Role="Wallet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BankTransaction">
+        <PropertyRef Name="TransactionID" />
+      </Principal>
+      <Dependent Role="Wallet">
+        <PropertyRef Name="TransactionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Draft_Branch">
+    <End Type="CloudBankingModel.Branch" Role="Branch" Multiplicity="1" />
+    <End Type="CloudBankingModel.Draft" Role="Draft" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Branch">
+        <PropertyRef Name="BranchID" />
+      </Principal>
+      <Dependent Role="Draft">
+        <PropertyRef Name="SenderBranchID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cheque_Customer">
+    <End Type="CloudBankingModel.Customer" Role="Customer" Multiplicity="1" />
+    <End Type="CloudBankingModel.Cheque" Role="Cheque" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Cheque">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Draft_Customer">
+    <End Type="CloudBankingModel.Customer" Role="Customer" Multiplicity="0..1" />
+    <End Type="CloudBankingModel.Draft" Role="Draft" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Draft">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FingerPrint_Customer">
+    <End Type="CloudBankingModel.Customer" Role="Customer" Multiplicity="1" />
+    <End Type="CloudBankingModel.FingerPrint" Role="FingerPrint" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="FingerPrint">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

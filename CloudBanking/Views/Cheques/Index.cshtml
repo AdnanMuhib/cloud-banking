@@ -1,0 +1,69 @@
+﻿@model IEnumerable<CloudBanking.Models.Cheque>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Amount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AmountInWords)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PayeeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ChequeDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MACAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IPAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer.CustomerName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Amount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AmountInWords)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PayeeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChequeDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MACAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IPAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Customer.CustomerName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ChequeID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ChequeID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ChequeID })
+        </td>
+    </tr>
+}
+
+</table>

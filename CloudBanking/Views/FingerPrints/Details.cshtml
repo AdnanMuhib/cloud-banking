@@ -1,0 +1,50 @@
+﻿@model CloudBanking.Models.FingerPrint
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>FingerPrint</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Arcs)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Arcs)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Whorls)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Whorls)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Loops)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Loops)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.CustomerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.CustomerName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.FingerPrintID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

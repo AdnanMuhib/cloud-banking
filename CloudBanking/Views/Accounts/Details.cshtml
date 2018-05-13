@@ -1,0 +1,82 @@
+﻿@model CloudBanking.Models.Account
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Account</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AccountCurrency)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AccountCurrency)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AccountType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AccountType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MinimumBalance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MinimumBalance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AccounBalance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AccounBalance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OpenDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OpenDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Account1.AccountCurrency)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Account1.AccountCurrency)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Account2.AccountCurrency)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Account2.AccountCurrency)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Branch.BranchName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Branch.BranchName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AccountID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

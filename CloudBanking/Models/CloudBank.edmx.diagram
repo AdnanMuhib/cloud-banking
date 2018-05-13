@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="964bdb2707a64b0fb42dd2ab4d32de4a" Name="Diagram1">
+        <EntityTypeShape EntityType="CloudBankingModel.Account" Width="1.5" PointX="2.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CloudBankingModel.BankTransaction" Width="1.875" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CloudBankingModel.Branch" Width="1.5" PointX="0.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="CloudBankingModel.Cheque" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CloudBankingModel.CurrencyRate" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CloudBankingModel.Customer" Width="1.5" PointX="5" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CloudBankingModel.Draft" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CloudBankingModel.Employee" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CloudBankingModel.FingerPrint" Width="1.5" PointX="2.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CloudBankingModel.sysdiagram" Width="1.5" PointX="4.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CloudBankingModel.Wallet" Width="1.5" PointX="6.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CloudBankingModel.BranchEmployee" Width="1.5" PointX="2.625" PointY="1.5" IsExpanded="true" />
+        <AssociationConnector Association="CloudBankingModel.FK_BranchEmployee_Branch" ManuallyRouted="false" />
+        <AssociationConnector Association="CloudBankingModel.FK_BranchEmployee_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="CloudBankingModel.AccountCustomer" ManuallyRouted="false" />
+        <AssociationConnector Association="CloudBankingModel.FK_Account_Account" />
+        <AssociationConnector Association="CloudBankingModel.FK_Account_Branch" />
+        <AssociationConnector Association="CloudBankingModel.FK_Draft_Account" />
+        <AssociationConnector Association="CloudBankingModel.FK_BankTransaction_Customer" />
+        <AssociationConnector Association="CloudBankingModel.FK_Wallet_BankTransaction" />
+        <AssociationConnector Association="CloudBankingModel.FK_Draft_Branch" />
+        <AssociationConnector Association="CloudBankingModel.FK_Cheque_Customer" />
+        <AssociationConnector Association="CloudBankingModel.FK_Draft_Customer" />
+        <AssociationConnector Association="CloudBankingModel.FK_FingerPrint_Customer" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

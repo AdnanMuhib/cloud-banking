@@ -1,0 +1,42 @@
+﻿@model CloudBanking.Models.Wallet
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Wallet</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AuthKey)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AuthKey)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WalletType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WalletType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BankTransaction.TransactionType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BankTransaction.TransactionType)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.WalletID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

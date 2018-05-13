@@ -1,0 +1,51 @@
+﻿@model IEnumerable<CloudBanking.Models.FingerPrint>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Arcs)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Whorls)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Loops)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer.CustomerName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Arcs)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Whorls)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Loops)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Customer.CustomerName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.FingerPrintID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.FingerPrintID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.FingerPrintID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,75 @@
+﻿@model IEnumerable<CloudBanking.Models.Draft>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SenderName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SenderCNIC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DraftAmount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DraftDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExpiryDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Account.AccountCurrency)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Branch.BranchName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer.CustomerName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SenderName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SenderCNIC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DraftAmount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DraftDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExpiryDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Account.AccountCurrency)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Branch.BranchName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Customer.CustomerName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DraftID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DraftID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DraftID })
+        </td>
+    </tr>
+}
+
+</table>

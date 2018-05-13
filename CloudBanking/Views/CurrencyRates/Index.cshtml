@@ -1,0 +1,69 @@
+﻿@model IEnumerable<CloudBanking.Models.CurrencyRate>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.USD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YEN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.INR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.POUND)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EURO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RIAL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DIRHAM)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.USD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YEN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.POUND)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EURO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RIAL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DIRHAM)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CurrencyDate }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CurrencyDate }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CurrencyDate })
+        </td>
+    </tr>
+}
+
+</table>
