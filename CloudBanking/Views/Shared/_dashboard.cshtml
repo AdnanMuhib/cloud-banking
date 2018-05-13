@@ -1,4 +1,11 @@
 ﻿
+@using Microsoft.AspNet.Identity;
+@using System.Web.Mvc;
+@using System.Data.Entity;
+@using CloudBanking.Models;
+@using Microsoft.AspNet.Identity.EntityFramework;
+@using Microsoft.AspNet.Identity.Owin;
+@using Microsoft.Owin.Security;
 <!DOCTYPE html>
 <html>
 
@@ -182,6 +189,28 @@
                             <span class="title ">Dashboard</span>
                         </a>
                     </li>
+@if (User.Identity.IsAuthenticated)
+{
+    var user = User.Identity;
+    ApplicationDbContext context = new ApplicationDbContext();
+    var UserManager = new UserManager
+    <ApplicationUser>
+        (new UserStore<ApplicationUser>
+            (context));
+    var s = UserManager.GetRoles(user.GetUserId());
+    if (s[0].ToString() == "Admin")
+    {
+        <li>
+            I am admin
+        </li>
+    }
+    if (s[0].ToString() == "User")
+    {
+        <li>
+            I am User
+        </li>
+    }
+}
                     <li>
                         <a href="index.html ">
                             <i class="fa fa-money "></i>
