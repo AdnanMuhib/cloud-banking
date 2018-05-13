@@ -5,10 +5,10 @@
     Layout = "~/Views/Shared/_dashboard.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Customers</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <a href="/Customers/Create" class="btn btn-success btn-cons">Create New</a>
 </p>
 <table class="table">
     <tr>
@@ -60,9 +60,9 @@
             @Html.DisplayFor(modelItem => item.Gender)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CustomerID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.CustomerID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.CustomerID })
+           @Html.ActionLink("Edit", "Edit", new { id = item.CustomerID }, new { @class = "btn btn-warning" }) |
+        @Html.ActionLink("Details", "Details", new { id = item.CustomerID }, new { @class = "btn btn-success" }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.CustomerID }, new { @class = "btn btn-danger" })
         </td>
     </tr>
 }

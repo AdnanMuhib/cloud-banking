@@ -8,7 +8,7 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <a href="/Employee/FingerPrint" class="btn btn-success btn-cons">Create New</a>
 </p>
 <table class="table">
     <tr>
@@ -42,9 +42,9 @@
             @Html.DisplayFor(modelItem => item.Customer.CustomerName)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.FingerPrintID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.FingerPrintID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.FingerPrintID })
+            @Html.ActionLink("Edit", "Edit", new { id=item.FingerPrintID },new { @class = "btn btn-warning"}) |
+            @Html.ActionLink("Details", "Details", new { id=item.FingerPrintID }, new { @class = "btn btn-success" }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.FingerPrintID }, new { @class = "btn btn-danger" })
         </td>
     </tr>
 }

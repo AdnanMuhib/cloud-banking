@@ -36,10 +36,9 @@
             @Html.DisplayFor(modelItem => item.BankTransaction.TransactionType)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.WalletID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.WalletID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.WalletID })
-        </td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.WalletID },new { @class = "btn btn-warning"}) |
+            @Html.ActionLink("Details", "Details", new { id=item.WalletID }, new { @class = "btn btn-success" }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.WalletID }, new { @class = "btn btn-danger" })
     </tr>
 }
 
