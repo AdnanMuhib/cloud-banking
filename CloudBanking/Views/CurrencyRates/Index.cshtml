@@ -1,14 +1,14 @@
 ﻿@model IEnumerable<CloudBanking.Models.CurrencyRate>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Currency Rates";
     Layout = "~/Views/Shared/_dashboard.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Currency Rates</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create", new { }, new { @class = "btn btn-primary btn-cons" })
 </p>
 <table class="table">
     <tr>
@@ -60,9 +60,9 @@
             @Html.DisplayFor(modelItem => item.DIRHAM)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CurrencyDate }) |
-            @Html.ActionLink("Details", "Details", new { id=item.CurrencyDate }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.CurrencyDate })
+            @Html.ActionLink("Edit", "Edit", new { id=item.CurrencyDate }, new { @class = "btn btn-warning" }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CurrencyDate }, new { @class = "btn btn-success" }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CurrencyDate }, new { @class = "btn btn-danger" })
         </td>
     </tr>
 }

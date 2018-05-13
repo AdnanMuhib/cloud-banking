@@ -1,14 +1,14 @@
 ﻿@model IEnumerable<CloudBanking.Models.Cheque>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Cheques";
     Layout = "~/Views/Shared/_dashboard.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Cheques</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create", new { }, new { @class = "btn btn-primary btn-cons" })
 </p>
 <table class="table">
     <tr>
@@ -60,9 +60,9 @@
             @Html.DisplayFor(modelItem => item.Customer.CustomerName)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ChequeID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ChequeID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ChequeID })
+            @Html.ActionLink("Edit", "Edit", new { id=item.ChequeID }, new { @class = "btn btn-warning" }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ChequeID }, new { @class = "btn btn-success" }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ChequeID }, new { @class = "btn btn-danger" })
         </td>
     </tr>
 }
