@@ -12,6 +12,10 @@ namespace CloudBanking.Controllers
         {
             return View();
         }
+        public ActionResult test()
+        {
+            return View();
+        }
         public ActionResult Dashboard()
         {
             return View();

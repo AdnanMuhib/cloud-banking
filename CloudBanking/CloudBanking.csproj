@@ -246,6 +246,34 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\dashboard\css\animate.min.css" />
+    <Content Include="Content\dashboard\css\bootstrap-responsive.min.css" />
+    <Content Include="Content\dashboard\css\bootstrap-theme.css" />
+    <Content Include="Content\dashboard\css\bootstrap-theme.min.css" />
+    <Content Include="Content\dashboard\css\bootstrap.css" />
+    <Content Include="Content\dashboard\css\bootstrap.min.css" />
+    <Content Include="Content\dashboard\css\component.css" />
+    <Content Include="Content\dashboard\css\demo.css" />
+    <Content Include="Content\dashboard\css\font-awesome.css" />
+    <Content Include="Content\dashboard\css\font-awesome.min.css" />
+    <Content Include="Content\dashboard\css\jquery.scrollbar.css" />
+    <Content Include="Content\dashboard\css\owl.carousel.css" />
+    <Content Include="Content\dashboard\css\webarch.css" />
+    <Content Include="Content\dashboard\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\dashboard\js\animate.min.css" />
+    <Content Include="Content\dashboard\js\bootstrap.js" />
+    <Content Include="Content\dashboard\js\bootstrap.min.js" />
+    <Content Include="Content\dashboard\js\jquery-1.11.3.min.js" />
+    <Content Include="Content\dashboard\js\jquery.animateNumbers.js" />
+    <Content Include="Content\dashboard\js\jquery.animateNumbers.min.js" />
+    <Content Include="Content\dashboard\js\jquery.blockui.js" />
+    <Content Include="Content\dashboard\js\jquery.blockui.min.js" />
+    <Content Include="Content\dashboard\js\jquery.scrollbar.css" />
+    <Content Include="Content\dashboard\js\jquery.scrollbar.min.js" />
+    <Content Include="Content\dashboard\js\jquery.unveil.min.js" />
+    <Content Include="Content\dashboard\js\jquery.validate.js" />
+    <Content Include="Content\dashboard\js\jquery.validate.min.js" />
+    <Content Include="Content\dashboard\js\pace.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -269,6 +297,11 @@
     <Content Include="Models\CloudBank.edmx.diagram">
       <DependentUpon>CloudBank.edmx</DependentUpon>
     </Content>
+    <Content Include="Content\dashboard\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\dashboard\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\dashboard\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\dashboard\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\dashboard\fonts\FontAwesome.otf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -371,6 +404,8 @@
     <Content Include="Views\CurrencyRates\Edit.cshtml" />
     <Content Include="Views\CurrencyRates\Index.cshtml" />
     <Content Include="Views\Home\Dashboard.cshtml" />
+    <Content Include="Views\Shared\_dashboard.cshtml" />
+    <Content Include="Views\Home\test.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
