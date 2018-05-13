@@ -30,9 +30,9 @@
             @Html.DisplayFor(modelItem => item.BranchAddress)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.BranchID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.BranchID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.BranchID })
+            @Html.ActionLink("Edit", "Edit", new { id=item.BranchID },new { @class = "btn btn-warning"}) |
+            @Html.ActionLink("Details", "Details", new { id=item.BranchID }, new { @class = "btn btn-success" }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BranchID }, new { @class = "btn btn-danger" })
         </td>
     </tr>
 }
