@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_dashboard.cshtml";
 }
 
-<h2>Drafts</h2>
+<h2>Index</h2>
 
 <p>
     <a href="/Drafts/Create" class="btn btn-success btn-cons">Create New</a>
@@ -28,7 +28,7 @@
             @Html.DisplayNameFor(model => model.ExpiryDate)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Account.AccountCurrency)
+            @Html.DisplayNameFor(model => model.BankAccount.AccountCurrency)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Branch.BranchName)
@@ -57,7 +57,7 @@
             @Html.DisplayFor(modelItem => item.ExpiryDate)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Account.AccountCurrency)
+            @Html.DisplayFor(modelItem => item.BankAccount.AccountCurrency)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Branch.BranchName)
@@ -66,9 +66,9 @@
             @Html.DisplayFor(modelItem => item.Customer.CustomerName)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.DraftID },new { @class = "btn btn-warning"}) |
-            @Html.ActionLink("Details", "Details", new { id=item.DraftID }, new { @class = "btn btn-success" }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.DraftID }, new { @class = "btn btn-danger" })
+        @Html.ActionLink("Edit", "Edit", new { id = item.DraftID }, new { @class = "btn btn-warning" }) |
+        @Html.ActionLink("Details", "Details", new { id = item.DraftID }, new { @class = "btn btn-success" }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.DraftID }, new { @class = "btn btn-danger" })
         </td>
     </tr>
 }

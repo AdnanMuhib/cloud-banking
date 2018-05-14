@@ -178,6 +178,7 @@
     <Compile Include="Controllers\ChequesController.cs" />
     <Compile Include="Controllers\CurrencyRatesController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
+    <Compile Include="Controllers\DraftsController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\FingerPrintsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -418,6 +419,11 @@
     <Content Include="Views\AccountCustomers\Details.cshtml" />
     <Content Include="Views\AccountCustomers\Edit.cshtml" />
     <Content Include="Views\AccountCustomers\Index.cshtml" />
+    <Content Include="Views\Drafts\Create.cshtml" />
+    <Content Include="Views\Drafts\Delete.cshtml" />
+    <Content Include="Views\Drafts\Details.cshtml" />
+    <Content Include="Views\Drafts\Edit.cshtml" />
+    <Content Include="Views\Drafts\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

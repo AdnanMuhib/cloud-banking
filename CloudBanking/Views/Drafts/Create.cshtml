@@ -7,7 +7,6 @@
 
 <h2>Create</h2>
 
-
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
@@ -16,7 +15,7 @@
         <h4>Draft</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-       
+        
 
         <div class="form-group">
             @Html.LabelFor(model => model.CustomerID, "CustomerID", htmlAttributes: new { @class = "control-label col-md-4" })
@@ -83,15 +82,15 @@
         </div>
 
         <div class="form-group">
-            <div >
-                <input type="submit" value="Create" class="btn btn-success btn" style="float:right;"/>
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-success btn" style="float:right;" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index",new { }, new { @class = "btn btn-primary"})
+    @Html.ActionLink("Back to List", "Index", new { }, new { @class = "btn btn-primary" })
 </div>
 
 @section Scripts {

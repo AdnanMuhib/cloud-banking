@@ -52,11 +52,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Account.AccountCurrency)
+            @Html.DisplayNameFor(model => model.BankAccount.AccountCurrency)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Account.AccountCurrency)
+            @Html.DisplayFor(model => model.BankAccount.AccountCurrency)
         </dd>
 
         <dt>
@@ -78,6 +78,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.DraftID }, new { @class="btn btn-warning"}) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DraftID }, new { @class = "btn btn-warning" }) |
     @Html.ActionLink("Back to List", "Index", new { }, new { @class = "btn btn-primary" })
 </p>
